@@ -1,13 +1,35 @@
 export const getSequence = n => {
-	return n
+	const sequence = []
+
+	for (let i = 0; i <= n; i++) {
+		sequence.push(i)
+	}
+
+	return sequence
 }
 
 export const getEvens = n => {
-	return n
+	const sequence = []
+
+	for (let i = 0; i <= n; i++) {
+		if (i % 2 === 0) {
+			sequence.push(i)
+		}
+	}
+
+	return sequence
 }
 
 export const getOdds = n => {
-	return n
+	const sequence = []
+
+	for (let i = 0; i <= n; i++) {
+		if (i % 2 !== 0) {
+			sequence.push(i)
+		}
+	}
+
+	return sequence
 }
 
 export const getLetters = n => {
