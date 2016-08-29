@@ -44,6 +44,7 @@ export function CalculatorReducer (state = initialState, action) {
 	    	const fibonnaci = getFibonnaci(inputValue).join(' ')
 	    		
 			return Object.assign({}, state, {
+				hasResults: true,
 				results: {
 					sequencial,
 					evens,
