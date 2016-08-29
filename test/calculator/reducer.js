@@ -4,6 +4,7 @@ import {CalculatorReducer} from '../../src/calculator/reducer'
 const initialState = {
     inputValue: '',
     error: null,
+    hasResults: false,
     results: {
         evens: null,
         fibonnaci: null,
@@ -28,6 +29,15 @@ describe('Reducer', () => {
 
     describe('CALCULATE_SEQUENCES', () => {
         describe('when state.inputValue is 20', () => {
+            it('Should update the states "hasResults" property to be true', () => {
+                initialState.inputValue = 20
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.hasResults).to.be.true
+            })
+
             it('Should update the states "results" property with relevant calculated results', () => {
                 initialState.inputValue = 20
                 const newState = CalculatorReducer(initialState, {
@@ -45,6 +55,15 @@ describe('Reducer', () => {
         })
 
         describe('when state.inputValue is 50', () => {
+            it('Should update the states "hasResults" property to be true', () => {
+                initialState.inputValue = 50
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.hasResults).to.be.true
+            })
+
             it('Should update the states "results" property with relevant calculated results', () => {
                 initialState.inputValue = 50
                 const newState = CalculatorReducer(initialState, {
@@ -62,6 +81,15 @@ describe('Reducer', () => {
         })
 
         describe('when state.inputValue is 111', () => {
+            it('Should update the states "hasResults" property to be true', () => {
+                initialState.inputValue = 111
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.hasResults).to.be.true
+            })
+
             it('Should update the states "results" property with relevant calculated results', () => {
                 initialState.inputValue = 111
                 const newState = CalculatorReducer(initialState, {
