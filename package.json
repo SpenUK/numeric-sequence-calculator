@@ -1,0 +1,11 @@
+{
+  "name": "numeric-sequence-calculator",
+  "version": "1.0.0",
+  "description": "An interface that shows numerical sequences based on the input of a user",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Spen Taylor",
+  "license": "ISC"
+}
