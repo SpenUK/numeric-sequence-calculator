@@ -15,8 +15,12 @@ export default class extends Component {
 		
 		return (
 			<div >
-				<input type="text" style={inputStyle} value={this.props.inputValue} onChange={handleInputChange.bind(this)} />
-				{this.props.hasResults ? <Results /> : <ResultsEmpty />}
+				<label for="calculator-input" style={styles.inputLabel}>Input:</label>
+				<input id="calculator-input" type="text" style={inputStyle} value={this.props.inputValue} onChange={handleInputChange.bind(this)} />
+				{this.props.hasResults ? <Results /> :
+					this.props.error ? <p style={styles.errorText}>{this.props.error}</p> :
+					<ResultsEmpty />
+				}
 			</div>
 		)
 	}

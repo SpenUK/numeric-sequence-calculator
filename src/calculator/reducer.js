@@ -29,7 +29,7 @@ export function CalculatorReducer (state = initialState, action) {
   	switch (action.type) {
 
 	    case CALCULATOR_INPUT_UPDATE: {
-	    	const inputValue = action.value
+	    	const inputValue = action.value.split('').slice(0, 4).join('')
 	    	
 			return Object.assign({}, state, {
 				inputValue
