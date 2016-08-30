@@ -28,6 +28,72 @@ describe('Reducer', () => {
     })
 
     describe('CALCULATE_SEQUENCES', () => {
+        describe('when state.inputValue is a string', () => {
+            it('Should update the states "error" property to be an error message', () => {
+                initialState.inputValue = 'string'
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.error).to.eql('Input must be a whole number')
+            })
+
+            it('Should set the states "hasResults" property to be false', () => {
+                initialState.inputValue = 'string'
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.hasResults).to.be.false
+            })
+
+            it('Should set the states "results" properties to each be null', () => {
+                initialState.inputValue = 'string'
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.results.evens).to.eql(null)
+                expect(newState.results.fibonnaci).to.eql(null)
+                expect(newState.results.letters).to.eql(null)
+                expect(newState.results.odds).to.eql(null)
+                expect(newState.results.sequencial).to.eql(null)
+            })
+        })
+
+        describe('when state.inputValue is a float', () => {
+            it('Should update the states "error" property to be an error message', () => {
+                initialState.inputValue = 1.2
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.error).to.eql('Input must be a whole number')
+            })
+
+            it('Should set the states "hasResults" property to be false', () => {
+                initialState.inputValue = 1.2
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.hasResults).to.be.false
+            })
+
+            it('Should set the states "results" properties to each be null', () => {
+                initialState.inputValue = 1.2
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.results.evens).to.eql(null)
+                expect(newState.results.fibonnaci).to.eql(null)
+                expect(newState.results.letters).to.eql(null)
+                expect(newState.results.odds).to.eql(null)
+                expect(newState.results.sequencial).to.eql(null)
+            })
+        })
+
         describe('when state.inputValue is 20', () => {
             it('Should update the states "hasResults" property to be true', () => {
                 initialState.inputValue = 20
