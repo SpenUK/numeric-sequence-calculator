@@ -17,13 +17,24 @@ const initialState = {
 describe('Reducer', () => {
     describe('CALCULATOR_INPUT_UPDATE', () => {
         it('Should update the states "inputValue" property with "value" of the action', () => {
-            const input = 'input'
+            const input = '333'
             const newState = CalculatorReducer(initialState, {
                 type: 'CALCULATOR_INPUT_UPDATE',
                 value: input
             })
 
             expect(newState.inputValue).to.eql(input)
+        })
+        describe('when the input is more than 4 characters', () => {
+            it('Should update the states "inputValue" property with "value" of the action trimmed to 4 characters', () => {
+                const input = '123456'
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATOR_INPUT_UPDATE',
+                    value: input
+                })
+
+                expect(newState.inputValue).to.eql('1234')
+            })
         })
     })
 
