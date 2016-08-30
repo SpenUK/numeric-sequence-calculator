@@ -11,6 +11,6 @@ An interface that shows numerical sequences based on the user input.
 
 ### Unit Tests...
 
-	$ npm Test
+	$ npm run test
 
 *note:* Only the app logic is tested - no view logic! (bar app.js)
