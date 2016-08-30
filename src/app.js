@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import Calculator from './calculator/calculator.connected'
 
 export default class App extends Component {
   	render() {
     	return (
       		<div>
-      			<h2>App Component</h2>
+      			<h4>Numeric Sequence Calculator</h4>
+      			<Calculator />
       		</div>
     	)
   	}
