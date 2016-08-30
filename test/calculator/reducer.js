@@ -104,6 +104,15 @@ describe('Reducer', () => {
                 expect(newState.hasResults).to.be.true
             })
 
+            it('Should update the states "error" property to be null', () => {
+                initialState.inputValue = 111
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.error).to.eql(null)
+            })
+
             it('Should update the states "results" property with relevant calculated results', () => {
                 initialState.inputValue = 20
                 const newState = CalculatorReducer(initialState, {
@@ -130,6 +139,15 @@ describe('Reducer', () => {
                 expect(newState.hasResults).to.be.true
             })
 
+            it('Should update the states "error" property to be null', () => {
+                initialState.inputValue = 111
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.error).to.eql(null)
+            })
+
             it('Should update the states "results" property with relevant calculated results', () => {
                 initialState.inputValue = 50
                 const newState = CalculatorReducer(initialState, {
@@ -154,6 +172,15 @@ describe('Reducer', () => {
                 })
 
                 expect(newState.hasResults).to.be.true
+            })
+
+            it('Should update the states "error" property to be null', () => {
+                initialState.inputValue = 111
+                const newState = CalculatorReducer(initialState, {
+                    type: 'CALCULATE_SEQUENCES'
+                })
+
+                expect(newState.error).to.eql(null)
             })
 
             it('Should update the states "results" property with relevant calculated results', () => {

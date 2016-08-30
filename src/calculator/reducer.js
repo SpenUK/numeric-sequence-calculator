@@ -12,7 +12,7 @@ import {
 } from './patterncalculations'
 
 const initialState = {
-	inputValue: 6,
+	inputValue: '',
 	error: null,
 	hasResults: false,
 	results: {
@@ -37,14 +37,14 @@ export function CalculatorReducer (state = initialState, action) {
 		}
 
 		case CALCULATE_SEQUENCES: {
-	    	const inputValue = parseFloat(state.inputValue)
+	    	const inputValue = state.inputValue
 	    	let sequencial
 			let evens
 			let odds
 			let letters
 			let fibonnaci
 
-			if (parseInt(inputValue) !== inputValue) {
+			if (parseInt(inputValue) != inputValue) {
 				return Object.assign({}, state, {
 					error: 'Input must be a whole number',
 					hasResults: false,
@@ -66,6 +66,7 @@ export function CalculatorReducer (state = initialState, action) {
 	    		
 			return Object.assign({}, state, {
 				hasResults: true,
+				error: null,
 				results: {
 					sequencial,
 					evens,
